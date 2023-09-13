@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/ui/keyboard_icons/keyboard_letter_and_symbols.png" type="Texture" id=1]
+[ext_resource path="res://assets/people/main_character.png" type="Texture" id=2]
+[ext_resource path="res://component_scenes/NPCs/NPC.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 28 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "interactionIn"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("InteractSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -36 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("InteractSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "interactionOut"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("InteractSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -36 ), Vector2( 0, -40 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("InteractSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="NPC" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 0.878431, 0.890196, 0.768627, 1 )
+texture = ExtResource( 2 )
+
+[node name="InteractZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
+position = Vector2( 0, 7 )
+shape = SubResource( 1 )
+
+[node name="InteractSprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -40 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 14
+frame = 20
+
+[node name="InteractionAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/interactionIn = SubResource( 2 )
+anims/interactionOut = SubResource( 3 )

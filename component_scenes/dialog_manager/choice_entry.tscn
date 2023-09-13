@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://component_scenes/dialog_manager/choice_entry.gd" type="Script" id=1]
+
+[node name="ChoiceEntry" type="VBoxContainer"]
+margin_top = 132.0
+margin_right = 260.0
+margin_bottom = 162.0
+script = ExtResource( 1 )

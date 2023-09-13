@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/dialog_entry/DIALOG_ENTRY.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/character_portrait_character.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+type = 0
+portrait = ExtResource( 2 )
+text = "[center]I'm gonna need you to drop that attitude."
+short_text = "Text displayed for choices"
+entry_references = [  ]
+choices = [  ]

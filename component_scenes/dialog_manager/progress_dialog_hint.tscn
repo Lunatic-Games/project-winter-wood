@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="ProgressDialogHint" type="RichTextLabel"]
+modulate = Color( 1, 1, 1, 0.705882 )
+margin_top = 132.0
+margin_right = 260.0
+margin_bottom = 162.0
+bbcode_enabled = true
+bbcode_text = "[center][shake]Press E to progress"
+text = "Press E to progress"
+fit_content_height = true

@@ -1,0 +1,6 @@
+res://scenes/test_scene.tscn
+res://component_scenes/player/player.gd
+res://scenes/combat.tscn
+res://scenes/combat.gd
+res://component_scenes/slot_machine/slot_machine.tscn
+res://component_scenes/slot_machine/slot_machine.gd

@@ -1,17 +1,17 @@
 extends Control
 
-export (Resource) var equipment
-export (PackedScene) var frame_scene
+@export var equipment: Resource
+@export var frame_scene: PackedScene
 
 const frame_size = 48
 const frame_seperation = 2
 
-onready var frames_container = $FramesContainer
-onready var border_node = $SlotMachineBorder
-onready var background_node = $SlotMachineBackground
-onready var full_disabler = $FullDisabler
-onready var enemy_disabler = $EnemyDisabler
-onready var used_disabler = $UsedDisabler
+@onready var frames_container = $FramesContainer
+@onready var border_node = $SlotMachineBorder
+@onready var background_node = $SlotMachineBackground
+@onready var full_disabler = $FullDisabler
+@onready var enemy_disabler = $EnemyDisabler
+@onready var used_disabler = $UsedDisabler
 
 var frames = []
 var active_frames = []
@@ -54,7 +54,7 @@ func spin_nonlocked_frames():
 	for frame in frames:
 		frame.start_spinning()
 		frames_rolling += 1
-		yield(get_tree().create_timer(0.35), "timeout")
+		await get_tree().create_timer(0.35).timeout
 	
 
 func handle_frame_finished_rolling():

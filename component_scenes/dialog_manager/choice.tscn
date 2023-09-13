@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://component_scenes/dialog_manager/choice.gd" type="Script" id=1]
+
+[node name="Choice" type="Button"]
+margin_right = 260.0
+margin_bottom = 20.0
+text = "You drop it"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_Choice_pressed"]

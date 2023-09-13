@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://component_scenes/dialog_manager/dialog_manager.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "enter"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1098, 25 ), Vector2( 659, 25 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "exit"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 659, 25 ), Vector2( 1098, 25 ) ]
+}
+
+[node name="DialogManager" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 1098.0
+margin_top = 25.0
+margin_right = 1368.0
+margin_bottom = 575.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 265.0
+margin_bottom = 545.0
+
+[node name="DisplayContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+margin_right = 260.0
+margin_bottom = 540.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/enter = SubResource( 1 )
+anims/exit = SubResource( 2 )

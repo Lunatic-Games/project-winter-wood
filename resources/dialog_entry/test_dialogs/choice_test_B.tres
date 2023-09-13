@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/dialog_entry/DIALOG_ENTRY.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/character_portrait_character.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+type = 0
+portrait = ExtResource( 2 )
+text = "Be careful with me you no good very bad man. I am old and soil myself every day. I have no money and barely a will to live. Just let me pass so I may die beneath my favorite mango tree over there."
+short_text = "Be careful with me"
+entry_references = [  ]
+choices = [  ]
